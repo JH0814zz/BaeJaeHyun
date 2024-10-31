@@ -4,7 +4,11 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    height: 100vh;
     overflow: hidden; /* 스크롤바 숨기기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 배경 비디오 스타일 */
@@ -25,7 +29,6 @@ body, html {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 40px 0;
     text-align: center;
 }
 
