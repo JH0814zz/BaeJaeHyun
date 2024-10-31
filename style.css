@@ -82,3 +82,29 @@ body, html {
     background-color: #f0f0f0;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
+
+.link-split-container {
+    display: flex;
+}
+
+.link-split {
+    flex: 1;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.link-split:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 반쪽 링크 카드 스타일 */
+.link-split + .link-split {
+    margin-left: 10px;
+}
