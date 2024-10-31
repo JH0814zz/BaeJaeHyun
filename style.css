@@ -5,36 +5,38 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    overflow: hidden; /* 스크롤바 숨기기 */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* 배경 비디오 스타일 */
-.background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
+    background: url('bgmovie.gif') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .container {
+    text-align: center;
     width: 300px;
-    max-width: 90%;
-    background: rgba(255, 255, 255, 0.8); /* 반투명 배경 */
+    background: white;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
 }
 
 .name {
     margin-top: -1.5mm;
-    font-size: 24px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.small-icon {
+    width: 20px;
+    height: auto;
+    margin-right: 2px;
+    vertical-align: middle;
 }
 
 .profile h1 {
@@ -43,7 +45,23 @@ body, html {
     margin-bottom: 30px;
 }
 
-.links .link,
+.links .link {
+    display: block;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px 0;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.links .link:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
 .call-button {
     display: block;
     text-decoration: none;
@@ -56,17 +74,9 @@ body, html {
     transition: all 0.2s ease;
 }
 
-.link:hover,
 .call-button:hover {
     background-color: #f0f0f0;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.small-icon {
-    width: 20px;
-    height: auto;
-    margin-right: 2px;
-    vertical-align: middle;
 }
 
 .link-split-container {
@@ -90,13 +100,6 @@ body, html {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* 반쪽 링크 카드 스타일 */
 .link-split + .link-split {
     margin-left: 10px;
-}
-
-footer p {
-    font-size: 12px;
-    color: #888;
-    margin-top: 20px;
 }
