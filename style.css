@@ -1,9 +1,8 @@
-/* style.css */
-
+/* 기본 설정 */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* 전체 폰트는 Montserrat로 설정 */
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -11,6 +10,8 @@ body, html {
     align-items: center;
     background: url('bgmovie.gif') no-repeat center center fixed;
     background-size: cover;
+    color: #000000; /* 글자 색을 완전 검정색으로 설정 */
+    font-weight: 500; /* 전체 폰트 두께를 기존 두께의 1.5배인 600으로 설정 */
 }
 
 .container {
@@ -24,6 +25,9 @@ body, html {
 
 .name {
     margin-top: -1.5mm;
+    font-family: 'NanumSquare', sans-serif; /* 배재현 이름에만 NanumSquare 폰트 적용 */
+    font-weight: 600; /* 배재현 이름의 두께도 600으로 설정 */
+    color: #000000; /* 이름 텍스트 색상도 검정색으로 설정 */
 }
 
 footer p {
@@ -45,61 +49,48 @@ footer p {
     margin-bottom: 30px;
 }
 
-.links .link {
-    display: block;
-    text-decoration: none;
-    background-color: #ffffff;
-    color: #333;
-    padding: 15px 0;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-}
-
-.links .link:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.call-button {
-    display: block;
-    text-decoration: none;
-    background-color: #ffffff;
-    color: #333;
-    padding: 15px 0;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-}
-
-.call-button:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.link-split-container {
-    display: flex;
-}
-
+/* 버튼 및 링크 스타일 */
+.links .link,
+.call-button,
 .link-split {
-    flex: 1;
+    display: block;
     text-decoration: none;
     background-color: #ffffff;
     color: #333;
     padding: 15px 0;
+    margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
-    text-align: center;
+    cursor: pointer;
+    position: relative; /* 가상 요소의 위치 기준 */
 }
 
+/* 호버 효과 */
+.links .link:hover,
+.call-button:hover,
 .link-split:hover {
     background-color: #f0f0f0;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.link-split + .link-split {
-    margin-left: 10px;
+/* 밑줄 효과 */
+.links .link::after,
+.call-button::after,
+.link-split::after {
+    content: ''; /* 가상 요소에 내용 추가 */
+    position: absolute;
+    left: 0; /* 왼쪽 끝부터 시작 */
+    bottom: 0;
+    width: 0%; /* 초기에는 밑줄이 0% */
+    height: 2px; /* 밑줄 두께 */
+    background-color: #000000; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 너비가 증가하는 애니메이션 */
+}
+
+/* 마우스를 올렸을 때 밑줄이 펼쳐지는 효과 */
+.links .link:hover::after,
+.call-button:hover::after,
+.link-split:hover::after {
+    width: 100%; /* 밑줄의 너비를 100%로 설정하여 양옆으로 펼쳐짐 */
 }
